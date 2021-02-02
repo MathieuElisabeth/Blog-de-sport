@@ -4,6 +4,15 @@ A blog about sport
 
 ## Setup
 
+Setup express :
+```sh
+$ npm install
+
+ou
+
+$ yarn install
+```
+
 Create database :
 ```sh
 $ psql -U postgres -c "CREATE DATABASE blog_sport;"
