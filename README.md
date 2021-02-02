@@ -3,7 +3,7 @@
 A blog about sport
 
 ## Setup
-
+```
 Create database :
 ```sh
 $ psql -U postgres -c "CREATE DATABASE blog_sport;"
@@ -18,3 +18,8 @@ $ psql -U postgres -d blog_sport -c "CREATE EXTENSION pgcrypto;"
 $ psql -U postgres -d blog_sport -c " INSERT INTO users (email,password) values ('admin@admin.fr', crypt('password',gen_salt('md5')));"
 ```
 
+## Start project
+```
+yarn install
+yarn start (listen on port 3000)
+```
