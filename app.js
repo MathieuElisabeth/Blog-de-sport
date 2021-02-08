@@ -35,6 +35,10 @@ app.get('/tous-les-articles', function(req, res) {
 res.render('pages/tous_les_articles');
 });
 
+app.get('/article', function(req, res) {
+  res.render('pages/article');
+  });
+
 app.listen(8080);
 console.log('listen on port 8080');
 
