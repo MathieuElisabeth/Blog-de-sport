@@ -24,10 +24,10 @@ router.post('/', function(req, res){
             if (error) {
                 throw error
             }
-            if(results.rows){
+            if(results.rows.length > 0){
                 req.session.loggedin = true;
                 req.session.username = req.body.email;
-                res.redirect('/admin' );
+                res.redirect('/admin');
             }
             res.render('login', {message: "Invalid credentials!"});
 
