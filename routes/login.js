@@ -20,13 +20,13 @@ router.post('/', function(req, res){
     if(!req.body.email || !req.body.password){
         res.render('login', {message: "Please enter both id and password"});
     } else {
-        let user = {};
         pool.query("SELECT id FROM users WHERE email = $1 AND password = crypt($2, password)",[req.body.email,req.body.password], (error, results) => {
             if (error) {
                 throw error
             }
             if(results.rows){
                 req.session.loggedin = true;
+                req.session.username = req.body.email;
                 res.redirect('/admin' );
             }
             res.render('login', {message: "Invalid credentials!"});
