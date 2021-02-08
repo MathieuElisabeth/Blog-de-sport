@@ -1,0 +1,112 @@
+include ../partials/header.jade
+.px-8.relative.top-7(class='md:px-28')
+  h1.text-white.text-2xl.font-semibold.p-16.pl-0(class='md:text-5xl sm:text-3xl') Tous les articles
+  .w-full
+    h2.flex-auto.my-5.text-base.text-white.font-bold(class='sm:text-2xl') Football
+    .w-full
+      .swiper-container.relative.w-full.overflow-hidden
+        .swiper-wrapper.flex.w-full
+          - for (var x = 1; x < 6; x++)
+            .swiper-slide.flex-shrink-0
+              .flex.flex-col.w-full.bg-gray-800.rounded-lg.overflow-hidden
+                img.inset-0.w-full.h-full.object-cover(src='/images/foot.jpg')
+                .w-full
+                  p.text-xs.text-gray-500.ml-3.mt-3.font-semibold(class='sm:text-sm')
+                    | Ligue 1
+                h3.flex-auto.text-base.text-white.font-bold.my-3.ml-3(class='sm:text-xl')
+                  a(href='')
+                    | Le PSG sombre &agrave;
+                    | Lorient
+                p.text-xs.text-gray-500.ml-3.mb-3(class='sm:text-sm')
+                  | Il y a 1 jours
+        .swiper-button-next.absolute.top-20.right-0.text-white.opacity-25(class='hover:opacity-100')
+          i.fas.fa-arrow-right.text-3xl
+        .swiper-button-prev.absolute.top-20.text-white.opacity-25(class='hover:opacity-100')
+          i.fas.fa-arrow-left.text-3xl
+    h2.flex-auto.my-5.text-base.text-white.font-bold(class='sm:text-2xl')
+      | Basketball
+    .w-full
+      .swiper-container.relative.w-full.overflow-hidden
+        .swiper-wrapper.flex.w-full
+          - for (var x = 1; x < 6; x++)
+            .swiper-slide.flex-shrink-0
+              .flex.flex-col.w-full.bg-gray-800.rounded-lg.overflow-hidden
+                img.inset-0.w-full.h-full.object-cover(src='/images/foot.jpg')
+                .w-full
+                  p.text-xs.text-gray-500.ml-3.mt-3.font-semibold(class='sm:text-sm')
+                    | Ligue 1
+                h3.flex-auto.text-base.text-white.font-bold.my-3.ml-3(class='sm:text-xl')
+                  a(href='')
+                    | Le PSG sombre &agrave;
+                    | Lorient
+                p.text-xs.text-gray-500.ml-3.mb-3(class='sm:text-sm')
+                  | Il y a 1 jours
+        .swiper-button-next.absolute.top-20.right-0.text-white.opacity-25(class='hover:opacity-100')
+          i.fas.fa-arrow-right.text-3xl
+        .swiper-button-prev.absolute.top-20.text-white.opacity-25(class='hover:opacity-100')
+          i.fas.fa-arrow-left.text-3xl
+    h2.flex-auto.my-5.text-base.text-white.font-bold(class='sm:text-2xl') Tennis
+    .w-full
+      .swiper-container.relative.w-full.overflow-hidden
+        .swiper-wrapper.flex.w-full
+          - for (var x = 1; x < 6; x++)
+            .swiper-slide.flex-shrink-0
+              .flex.flex-col.w-full.bg-gray-800.rounded-lg.overflow-hidden
+                img.inset-0.w-full.h-full.object-cover(src='/images/foot.jpg')
+                .w-full
+                  p.text-xs.text-gray-500.ml-3.mt-3.font-semibold(class='sm:text-sm')
+                    | Ligue 1
+                h3.flex-auto.text-base.text-white.font-bold.my-3.ml-3(class='sm:text-xl')
+                  a(href='')
+                    | Le PSG sombre &agrave;
+                    | Lorient
+                p.text-xs.text-gray-500.ml-3.mb-3(class='sm:text-sm')
+                  | Il y a 1 jours
+        .swiper-button-next.absolute.top-20.right-0.text-white.opacity-25(class='hover:opacity-100')
+          i.fas.fa-arrow-right.text-3xl
+        .swiper-button-prev.absolute.top-20.text-white.opacity-25(class='hover:opacity-100')
+          i.fas.fa-arrow-left.text-3xl
+    h2.flex-auto.my-5.text-base.text-white.font-bold(class='sm:text-2xl') Rugby
+    .w-full
+      .swiper-container.relative.w-full.overflow-hidden
+        .swiper-wrapper.flex.w-full
+          - for (var x = 1; x < 6; x++)
+            .swiper-slide.flex-shrink-0
+              .flex.flex-col.w-full.bg-gray-800.rounded-lg.overflow-hidden
+                img.inset-0.w-full.h-full.object-cover(src='/images/foot.jpg')
+                .w-full
+                  p.text-xs.text-gray-500.ml-3.mt-3.font-semibold(class='sm:text-sm')
+                    | Ligue 1
+                h3.flex-auto.text-base.text-white.font-bold.my-3.ml-3(class='sm:text-xl')
+                  a(href='')
+                    | Le PSG sombre &agrave;
+                    | Lorient
+                p.text-xs.text-gray-500.ml-3.mb-3(class='sm:text-sm')
+                  | Il y a 1 jours
+        .swiper-button-next.absolute.top-20.right-0.text-white.opacity-25(class='hover:opacity-100')
+          i.fas.fa-arrow-right.text-3xl
+        .swiper-button-prev.absolute.top-20.text-white.opacity-25(class='hover:opacity-100')
+          i.fas.fa-arrow-left.text-3xl
+    h2.flex-auto.my-5.text-base.text-white.font-bold(class='sm:text-2xl') Autres
+    .w-full
+      .swiper-container.relative.w-full.overflow-hidden
+        .swiper-wrapper.flex.w-full
+          - for (var x = 1; x < 6; x++)
+            .swiper-slide.flex-shrink-0
+              .flex.flex-col.w-full.bg-gray-800.rounded-lg.overflow-hidden
+                img.inset-0.w-full.h-full.object-cover(src='/images/foot.jpg')
+                .w-full
+                  p.text-xs.text-gray-500.ml-3.mt-3.font-semibold(class='sm:text-sm')
+                    | Ligue 1
+                h3.flex-auto.text-base.text-white.font-bold.my-3.ml-3(class='sm:text-xl')
+                  a(href='')
+                    | Le PSG sombre &agrave;
+                    | Lorient
+                p.text-xs.text-gray-500.ml-3.mb-3(class='sm:text-sm')
+                  | Il y a 1 jours
+        .swiper-button-next.absolute.top-20.right-0.text-white.opacity-25(class='hover:opacity-100')
+          i.fas.fa-arrow-right.text-3xl
+        .swiper-button-prev.absolute.top-20.text-white.opacity-25(class='hover:opacity-100')
+          i.fas.fa-arrow-left.text-3xl
+script(src='https://unpkg.com/swiper/swiper-bundle.min.js')
+script(src='/src/blog.js')
