@@ -1,0 +1,33 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css' integrity='sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==' crossorigin='anonymous')
+  link(href='https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css' rel='stylesheet')
+  title Blog de sport
+
+body.bg-gray-900
+  header.fixed.top-0.w-full.flex.justify-between.bg-gray-800.border-b-2.border-blue-500.z-30
+    button#hamburger.inline-flex.items-center.justify-center.p-2.rounded-md.text-gray-400(class='sm:hidden hover:text-white hover:bg-gray-700 focus:outline-none' aria-expanded='false')
+      span.sr-only Open main menu
+      svg.block.h-6.w-6(xmlns='http://www.w3.org/2000/svg' fill='none' viewbox='0 0 24 24' stroke='currentColor' aria-hidden='true')
+        path(stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 6h16M4 12h16M4 18h16')
+    .pl-12
+      img.w-28(class='md:w-36' src='/images/Logo.png' alt='')
+    nav.hidden.items-center(class='sm:flex')
+      ul.flex
+        li.pr-12
+          a.text-white(class='hover:text-gray-300' href='') Acceuil
+        li
+          a.text-white(class='hover:text-gray-300' href='') Tous les articles
+    .flex.items-center.pr-6(class='sm:pr-12')
+      a.text-white.flex.justify-center.items-center.rounded.h-8.w-20.text-sm.bg-blue-500(class='md:w-28 sm:text-base' href='') Connexion
+  #menu-mobile.z-40.hidden.fixed.h-screen.bg-gray-800(class='sm:hidden')
+    button#close.mt-4.inline-flex.items-center.justify-center.p-2.rounded-md.text-gray-400(class='sm:hidden hover:text-white hover:bg-gray-700 focus:outline-none' aria-expanded='false')
+      svg.block.h-6.w-6(xmlns='http://www.w3.org/2000/svg' fill='none' viewbox='0 0 24 24' stroke='currentColor' aria-hidden='true')
+        path(stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 18L18 6M6 6l12 12')
+    .px-2.pt-8.pb-3.space-y-1
+      a.text-white.block.px-3.py-2.rounded-md.text-base.font-medium(href='#' class='hover:text-gray-300 hover:bg-gray-700') Acceuil
+      a.text-white.block.px-3.py-2.rounded-md.text-base.font-medium(href='#' class='hover:text-gray-300 hover:bg-gray-700')
+        | Tous
+        | les articles
