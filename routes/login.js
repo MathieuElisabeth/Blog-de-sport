@@ -12,13 +12,13 @@ const pool = new Pool({
 
 
 router.get('/',function(req,res){
-    res.render('login')
+    res.render('pages/connexion')
 });
 
 router.post('/', function(req, res){
 
     if(!req.body.email || !req.body.password){
-        res.render('login', {message: "Please enter both id and password"});
+        res.render('pages/connexion', {message: "Veuillez entrez votre identifiant et votre mot de passe"});
     } else {
         pool.query("SELECT id FROM users WHERE email = $1 AND password = crypt($2, password)",[req.body.email,req.body.password], (error, results) => {
             if (error) {
@@ -29,7 +29,7 @@ router.post('/', function(req, res){
                 req.session.username = req.body.email;
                 res.redirect('/admin');
             }
-            res.render('login', {message: "Invalid credentials!"});
+            res.render('pages/connexion', {message: "Identifiants incorrects"});
 
 
         });
