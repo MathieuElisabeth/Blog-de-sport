@@ -38,4 +38,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+const db = require("./app/models");
+db.sequelize.sync();
 module.exports = app;
