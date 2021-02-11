@@ -1,5 +1,4 @@
 module.exports = (sequelize, Sequelize) => {
-
     const Article = sequelize.define("articles", {
         title: {
             type: Sequelize.STRING
@@ -14,16 +13,9 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.BOOLEAN
         }
     });
-    const Category = sequelize.define("categories", {
-        name: {
-            type: Sequelize.STRING
-        },
-        published: {
-            type: Sequelize.BOOLEAN
-        }
-    });
-    Article.belongsTo(Category);
-    Category.hasMany(Article)
+    Article.associate = (models) => {
+        Article.belongsTo(models.categories);
+    }
 
     return Article;
 };
