@@ -2,10 +2,11 @@ const db = require("../models");
 const Article = db.articles;
 const Op = db.Sequelize.Op;
 
-// Create and Save a new Tutorial
+// Create and Save a new Article
 exports.create = (req, res) => {
+    console.log(req.body)
     // Validate request
-    if (!req.body.title) {
+    if (!req.body.title || !req.body.category) {
         res.status(400).send({
             message: "Content can not be empty!"
         });
@@ -15,10 +16,11 @@ exports.create = (req, res) => {
     const article = {
         title: req.body.title,
         description: req.body.description,
-        published: req.body.published ? req.body.published : false
+        published: req.body.published ? req.body.published : false,
+        categoryId: req.body.category
     };
 
-    // Save Tutorial in the database
+    // Save Article in the database
     Article.create(article)
         .then(data => {
             res.send(data);
@@ -26,12 +28,12 @@ exports.create = (req, res) => {
         .catch(err => {
             res.status(500).send({
                 message:
-                    err.message || "Some error occurred while creating the Tutorial."
+                    err.message || "Some error occurred while creating the Article."
             });
         });
 };
 
-// Retrieve all Tutorials from the database.
+// Retrieve all Articles from the database.
 exports.findAll = (req, res) => {
     const title = req.query.title;
     var condition = title ? { title: { [Op.iLike]: `%${title}%` } } : null;
@@ -43,12 +45,12 @@ exports.findAll = (req, res) => {
         .catch(err => {
             res.status(500).send({
                 message:
-                    err.message || "Some error occurred while retrieving tutorials."
+                    err.message || "Some error occurred while retrieving Articles."
             });
         });
 };
 
-// Find a single Tutorial with an id
+// Find a single Article with an id
 exports.findOne = (req, res) => {
     const id = req.params.id;
 
@@ -58,12 +60,12 @@ exports.findOne = (req, res) => {
         })
         .catch(err => {
             res.status(500).send({
-                message: "Error retrieving Tutorial with id=" + id
+                message: "Error retrieving Article with id=" + id
             });
         });
 };
 
-// Update a Tutorial by the id in the request
+// Update a Article by the id in the request
 exports.update = (req, res) => {
     const id = req.params.id;
 
@@ -73,22 +75,22 @@ exports.update = (req, res) => {
         .then(num => {
             if (num == 1) {
                 res.send({
-                    message: "Tutorial was updated successfully."
+                    message: "Article was updated successfully."
                 });
             } else {
                 res.send({
-                    message: `Cannot update Tutorial with id=${id}. Maybe Tutorial was not found or req.body is empty!`
+                    message: `Cannot update Article with id=${id}. Maybe Article was not found or req.body is empty!`
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: "Error updating Tutorial with id=" + id
+                message: "Error updating Article with id=" + id
             });
         });
 };
 
-// Delete a Tutorial with the specified id in the request
+// Delete a Article with the specified id in the request
 exports.delete = (req, res) => {
     const id = req.params.id;
 
@@ -98,17 +100,17 @@ exports.delete = (req, res) => {
         .then(num => {
             if (num == 1) {
                 res.send({
-                    message: "Tutorial was deleted successfully!"
+                    message: "Article was deleted successfully!"
                 });
             } else {
                 res.send({
-                    message: `Cannot delete Tutorial with id=${id}. Maybe Tutorial was not found!`
+                    message: `Cannot delete Article with id=${id}. Maybe Article was not found!`
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: "Could not delete Tutorial with id=" + id
+                message: "Could not delete Article with id=" + id
             });
         });
 };
