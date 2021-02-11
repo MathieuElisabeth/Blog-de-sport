@@ -1,6 +1,4 @@
 module.exports = (sequelize, Sequelize) => {
-    const db = require('./index');
-
     const Article = sequelize.define("articles", {
         title: {
             type: Sequelize.STRING
@@ -15,9 +13,9 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.BOOLEAN
         }
     });
-
-    const Category = db.category
-    Article.belongsTo(Category);
+    Article.associate = (models) => {
+        Article.belongsTo(models.categories);
+    }
 
     return Article;
 };
