@@ -42,6 +42,26 @@ res.render('pages/tous_les_articles');
 app.listen(8080);
 console.log('listen on port 8080');
 
+// Page
+app.get('/acceuil', function(req, res) {
+  res.render('pages/acceuil');
+});
+
+app.get('/connexion', function(req, res) {
+  res.render('pages/connexion');
+});
+
+app.get('/tous-les-articles', function(req, res) {
+res.render('pages/tous_les_articles');
+});
+
+app.get('/article', function(req, res) {
+  res.render('pages/article');
+  });
+
+app.listen(8080);
+console.log('listen on port 8080');
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
