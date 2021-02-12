@@ -1,7 +1,0 @@
-module.exports = {
-  HOST: "localhost",
-  USER: "postgres",
-  PASSWORD: "123",
-  DB: "blog_sport",
-  dialect: "postgres",
-};
