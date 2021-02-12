@@ -13,6 +13,9 @@ const pool = new Pool({
 
 
 router.get('/',function(req,res){
+    if(req.session.loggedin){
+        res.redirect('/admin');
+    }
     res.render('pages/connexion')
 });
 
