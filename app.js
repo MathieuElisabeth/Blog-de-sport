@@ -7,6 +7,7 @@ var session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var articlesRouter = require('./routes/articles');
 var loginRouter = require('./routes/login');
 
 var app = express();
@@ -24,43 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/articles', articlesRouter);
 app.use('/connexion', loginRouter);
-
-// Page
-app.get('/acceuil', function(req, res) {
-  res.render('pages/acceuil');
-});
-
-app.get('/connexion', function(req, res) {
-  res.render('pages/connexion');
-});
-
-app.get('/tous-les-articles', function(req, res) {
-res.render('pages/tous_les_articles');
-});
-
-app.listen(8080);
-console.log('listen on port 8080');
-
-// Page
-app.get('/acceuil', function(req, res) {
-  res.render('pages/acceuil');
-});
-
-app.get('/connexion', function(req, res) {
-  res.render('pages/connexion');
-});
-
-app.get('/tous-les-articles', function(req, res) {
-res.render('pages/tous_les_articles');
-});
-
-app.get('/article', function(req, res) {
-  res.render('pages/article');
-  });
-
-app.listen(8080);
-console.log('listen on port 8080');
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -78,4 +44,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+const db = require("./app/models");
+db.sequelize.sync();
 module.exports = app;
