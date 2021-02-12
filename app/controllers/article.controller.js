@@ -6,22 +6,15 @@ const Op = db.Sequelize.Op;
 exports.create = (req, res) => {
     console.log(req.body)
     // Validate request
-    if (!req.body.title || !req.body.category) {
+    if (!req.body.title || !req.body.categoryId) {
         res.status(400).send({
             message: "Content can not be empty!"
         });
         return;
     }
-    // Create a Article
-    const article = {
-        title: req.body.title,
-        description: req.body.description,
-        published: req.body.published ? req.body.published : false,
-        categoryId: req.body.category
-    };
 
     // Save Article in the database
-    Article.create(article)
+    Article.create(req.body)
         .then(data => {
             res.send(data);
         })
