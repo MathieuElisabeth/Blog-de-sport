@@ -3,21 +3,8 @@ include ../partials/header.jade
   .w-full.bg-gray-800.rounded-lg.mb-12
     .w-full.h-96
       img.inset-0.w-full.h-full.object-cover(src='../../images/foot.jpg' alt='')
-    h1.text-white.text-2xl.my-8.px-3.font-bold(class='md:text-6xl sm:text-4xl') Lorem ipsum dolor sit amet.
+    h1.text-white.text-2xl.my-8.px-3.font-bold(class='md:text-6xl sm:text-4xl') #{article.title}
     p.text-xs.mb-4.text-gray-500.px-3(class='sm:text-sm')
-      | Publi&eacute; le 02/02/2021
-    p.text-white.text-justify.pb-10.px-3
-      | Lorem ipsum dolor sit amet. Non enim facere qui dolorem quaerat in dolorem nemo est recusandae delectus eum
-      | libero officiis qui temporibus iusto est porro assumenda. Ab voluptates quia et dolorem voluptates et iste
-      | quibusdam. Et laboriosam quia cum quia temporibus et omnis consequatur aut fuga velit!
-      br
-      br
-      |         Vel ipsa iste est optio libero cum deserunt voluptatem qui quia nihil est quod iste hic voluptatem illo et
-      |         praesentium accusantium. Et beatae quam id ipsa autem quo impedit eligendi est architecto adipisci ut nihil vero
-      |         ut saepe velit.
-      br
-      br
-      |         Quo voluptas aliquam non quibusdam officiis quo assumenda error. 33 praesentium enim et dolorem numquam est
-      |         corporis blanditiis. Aut dolorum adipisci est neque fuga est quod illo ut quibusdam molestiae. Qui possimus
-      |         animi ut eveniet pariatur ut aliquam sapiente est omnis nobis.
+      | Publi&eacute; le #{article.createdAt}
+    p.text-white.text-justify.pb-10.px-3 #{article.description}
 script(src='../../public/src/blog.js')

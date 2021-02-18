@@ -6,7 +6,7 @@ include ../partials/header.jade
     .w-full
       .swiper-container.relative.w-full.overflow-hidden
         .swiper-wrapper.flex.w-full
-          - for (var x = 1; x < 6; x++)
+          - each article in articles
             .swiper-slide.flex-shrink-0
               .flex.flex-col.w-full.bg-gray-800.rounded-lg.overflow-hidden
                 img.inset-0.w-full.h-full.object-cover(src='/images/foot.jpg')
@@ -14,9 +14,7 @@ include ../partials/header.jade
                   p.text-xs.text-gray-500.ml-3.mt-3.font-semibold(class='sm:text-sm')
                     | Ligue 1
                 h3.flex-auto.text-base.text-white.font-bold.my-3.ml-3(class='sm:text-xl')
-                  a(href='')
-                    | Le PSG sombre &agrave;
-                    | Lorient
+                  a(href='/articles/' + article.id) #{article.title}
                 p.text-xs.text-gray-500.ml-3.mb-3(class='sm:text-sm')
                   | Il y a 1 jours
         .swiper-button-next.absolute.top-20.right-0.text-white.opacity-25(class='hover:opacity-100')
