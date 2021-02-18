@@ -30,10 +30,9 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
     const title = req.query.title;
     var condition = title ? { title: { [Op.iLike]: `%${title}%` } } : null;
-
     Article.findAll({ where: condition })
         .then(data => {
-            res.send(data);
+            res.render('pages/tous_les_articles',{articles : data});
         })
         .catch(err => {
             res.status(500).send({
@@ -46,10 +45,9 @@ exports.findAll = (req, res) => {
 // Find a single Article with an id
 exports.findOne = (req, res) => {
     const id = req.params.id;
-
     Article.findByPk(id)
         .then(data => {
-            res.send(data);
+            res.render('pages/article',{article : data})
         })
         .catch(err => {
             res.status(500).send({
